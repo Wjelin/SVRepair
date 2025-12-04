@@ -1,0 +1,11 @@
+mkdir cve_fixes_and_big_vul
+cd cve_fixes_and_big_vul
+gdown https://drive.google.com/uc?id=1KCm6FAnSzjlHNfSvUI5wocVwSQwMi7Pb
+gdown https://drive.google.com/uc?id=1eM7GTWLlQaD3c6vXZNn7pxnbwY9dskbH
+gdown https://drive.google.com/uc?id=1z9U3qjKxWTeM5YpaYx4AhJ_mH671OMdl
+cd ..
+mkdir vrepair_bug_data
+cd vrepair_bug_data
+gdown https://drive.google.com/uc?id=1F_sGPnJ6BAyMJDkWn2eNJynjOgNBOniC
+gdown https://drive.google.com/uc?id=1EXQ6zapTGwlPnnyjOYdOupepcMf-boVJ
+cd ..

@@ -1,0 +1,7 @@
+# torch==1.13.1
+transformers==4.42.4
+numpy==1.26.4
+pandas==2.2.2
+tqdm==4.66.4
+datasets==2.20.0
+cpgqls-client==0.0.9

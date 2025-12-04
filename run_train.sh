@@ -1,0 +1,33 @@
+python train_model.py \
+    --train_data_path=data/vrepair_non_domain_data/train.jsonl \
+    --eval_data_path=data/vrepair_non_domain_data/eval.jsonl \
+    --ckpt_dir=saves/pretrain \
+    --ablation="full" \
+    --struct_bias_init="default" \
+    --batch_size=8 \
+    --epochs=75 \
+    --lr=1e-4 \
+    --weight_decay=0.0 \
+    --adam_epsilon=1e-8 \
+    --seed=12345 \
+    --lambda_dep=1.0 \
+    --early_stop_patience=50 \
+    --gpu_id 0 2>&1 | tee log/pretrain.log
+
+python train_model.py \
+    --train_data_path=data/cve_fixes_and_big_vul/train.jsonl \
+    --eval_data_path=data/cve_fixes_and_big_vul/eval.jsonl \
+    --ckpt_dir=saves/train \
+    --load_pretrained_model \
+    --pretrained_model_path=saves/pretrain/best_model.pt \
+    --ablation="full" \
+    --struct_bias_init="default" \
+    --batch_size=8 \
+    --epochs=75 \
+    --lr=1e-4 \
+    --weight_decay=0.0 \
+    --adam_epsilon=1e-8 \
+    --seed=12345 \
+    --lambda_dep=1.0 \
+    --early_stop_patience=20 \
+    --gpu_id 0 2>&1 | tee log/train.log
